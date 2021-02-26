@@ -18,3 +18,16 @@ module "my-server" {
     network = data.terraform_remote_state.network_details.outputs.prajith-vpc
   }
 
+
+
+module "second-module" {
+    source = "./modules/linux_nodes"
+    boot_disk = "ubuntu-2004-focal-v20210211"
+    type_of_machine = var.type_of_machine
+    name = "batch2"
+    zone = "us-central1-a"
+    instance_count = var.instance_count
+    subnetwork = data.terraform_remote_state.network_details.outputs.prajith-subnet
+    network = data.terraform_remote_state.network_details.outputs.prajith-vpc
+  }
+

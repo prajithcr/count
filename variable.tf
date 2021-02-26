@@ -13,6 +13,6 @@ variable "type_of_machine" {
 }
 
 variable "instance_count" {
-  default = "3"
+  default = "1"
 }
 
