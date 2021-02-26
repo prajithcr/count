@@ -29,3 +29,6 @@ variable "network" {
   default = "prajith-vpc"
 }
 
+variable "instance_count" {
+  default = "1"
+}

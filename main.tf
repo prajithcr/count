@@ -13,6 +13,7 @@ module "my-server" {
     type_of_machine = var.type_of_machine
     name = "prajith-terraform-vm-test"
     zone = "us-central1-a"
+    instance_count = var.instance_count
     subnetwork = data.terraform_remote_state.network_details.outputs.prajith-subnet
     network = data.terraform_remote_state.network_details.outputs.prajith-vpc
   }

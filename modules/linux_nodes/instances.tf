@@ -1,6 +1,7 @@
 
 resource "google_compute_instance" "my_vm" {
-    name =  var.name
+    count = var.instance_count
+    name = "${var.name}-${count.index+1}"
     machine_type = var.type_of_machine
     zone = var.zone
     boot_disk {
